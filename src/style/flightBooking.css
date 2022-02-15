@@ -2,3 +2,13 @@
   display: grid;
   grid-template-columns: 4fr 6fr;
 }
+
+@media screen and (max-width: 780px) {
+  .flightBooking {
+    display: block;
+  }
+
+  .flightBooking > *:first-child {
+    margin-bottom: 30px;
+  }
+}

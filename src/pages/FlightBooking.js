@@ -15,6 +15,7 @@ class FlightBooking extends React.Component {
   componentDidMount() {
     const flightID = this.props.match.params.id;
 
+    // to fill the input value
     this.fetchFlightInfo(flightID);
     this.fetchFlightSeats(flightID);
   }
@@ -25,6 +26,12 @@ class FlightBooking extends React.Component {
     this.setState({
       selectedSeat: id
     });
+  }
+
+  bookTheSeat = () => {
+    console.log(`a user wants to book a seat - ${this.state.selectedSeat}`);
+
+    // fetch post
   }
 
   fetchFlightInfo = async (id) => {

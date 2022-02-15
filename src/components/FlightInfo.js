@@ -2,6 +2,10 @@ import React from 'react';
 import '../style/flightInfo.css';
 
 class FlightInfo extends React.Component {
+  clickBookingBtn = () => {
+    this.props.bookTheFlight();
+  }
+
   render () {
     return (
       <section className="flightInfo">
@@ -16,10 +20,6 @@ class FlightInfo extends React.Component {
             <p>11/02/202</p>
           </div>
           <div>
-            <p>Airplane type</p>
-            <p>707</p>
-          </div>
-          <div>
             <p>Trip</p>
             <p>Sydney to Melbourne</p>
           </div>
@@ -32,6 +32,12 @@ class FlightInfo extends React.Component {
           <p>Selected Seat</p>
           <p>{this.props.selectedSeat || "Select your seat"}</p>
         </div>
+        <button 
+          className="flightInfo__bookingBtn"
+          onClick={this.clickBookingBtn}
+        >
+          Select
+        </button>
       </section>
     )
   }

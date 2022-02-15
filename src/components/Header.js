@@ -10,9 +10,12 @@ class Header extends React.Component {
           <Link to="/">Burning Airlines</Link>
         </h1>
 
+        <p>Hello, username!</p>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/search">Search</Link>
+          {/* this will redirect to backend */}
+          <a href="http://localhost:3000/">Logout</a>
         </nav>
       </header>
     )

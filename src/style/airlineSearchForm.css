@@ -17,6 +17,8 @@
 .airlineSearchForm input {
   all: unset;
   display: block;
+  box-sizing: border-box;
+  width: 170px;
   padding: 10px 5px;
   border-bottom: 1px solid gray;
 }
@@ -30,4 +32,15 @@
   border-radius: 20px;
   font-size: 14px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+  .airlineSearchForm input {
+    width: 100%;
+  }
+
+  .airlineSearchForm button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
 }

@@ -11,6 +11,13 @@
   font-size: 18px;
 }
 
+.header p {
+  margin-left: auto;
+  margin-right: 20px;
+  font-size: 13px;
+  color: gray;
+}
+
 .header nav a {
   margin-left: 20px;
   font-size: 14px;
