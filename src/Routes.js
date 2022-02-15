@@ -9,8 +9,8 @@ class Routes extends React.Component {
     return (
       <>
         <Route exact path='/' component={Home} />
-        <Route path='/search' component={AirlineSearch} />
-        {/* <Route path='/search/:origin/:destination' component={AirlineSearch} /> */}
+        <Route exact path='/search' component={AirlineSearch} />
+        <Route exact path='/search/:origin/:destination' component={AirlineSearch} />
         <Route exact path='/flight/:id' component={FlightBooking} />
       </>
     )

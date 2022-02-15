@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../style/airlineSearchResults.css';
 
 class AirlineSearchResults extends React.Component {
@@ -17,7 +18,9 @@ class AirlineSearchResults extends React.Component {
           {/* will iterate with .map here */}
           <li>
             <span>3/1/13</span>
-            <span>23</span>
+            <span>
+              <Link to={`/flight/:id`}>23</Link>
+            </span>
             <span>Sydney - Seoul</span>
             <span>757</span>
           </li>
