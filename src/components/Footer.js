@@ -1,8 +1,9 @@
 import React from 'react';
+import '../style/footer.css';
 
 const Footer = () => {
   return (
-    <footer>&copy; 2022 GA</footer>
+    <footer className="footer">&copy; 2022 GA</footer>
   )
 }
 

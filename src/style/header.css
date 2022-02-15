@@ -1,0 +1,15 @@
+.header {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.header nav a {
+  margin-left: 10px;
+}
