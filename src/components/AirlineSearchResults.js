@@ -6,7 +6,7 @@ class AirlineSearchResults extends React.Component {
   render () {
     return (
       <div className="airlineSearchResults">
-        <h2>Flight Search Results</h2>
+        <h2>Flight Search Results: Sydney to Melbourne</h2>
         <ul>
           <li>
             <span>Date</span>
@@ -16,6 +16,14 @@ class AirlineSearchResults extends React.Component {
           </li>
 
           {/* will iterate with .map here */}
+          <li>
+            <span>3/1/13</span>
+            <span>
+              <Link to={`/flight/:id`}>23</Link>
+            </span>
+            <span>Sydney - Seoul</span>
+            <span>757</span>
+          </li>
           <li>
             <span>3/1/13</span>
             <span>

@@ -13,7 +13,13 @@ class AirlineSearch extends React.Component {
     const currentOrigin = this.props.match.params.origin;
     const currentDestination = this.props.match.params.destination;
 
-    this.fetchSearchResults(currentOrigin, currentDestination);
+    if(currentOrigin && currentDestination) {
+      this.fetchSearchResults(currentOrigin, currentDestination);
+    } else {
+      this.setState({
+        loading: false
+      })
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -56,7 +62,7 @@ class AirlineSearch extends React.Component {
         <p>Loading...</p>
         :
         <div>
-          <AirlineSearchForm onSubmit={this.searchAirline} />
+          <AirlineSearchForm onSubmit={this.searchAirline} params={this.props.match.params} />
           <AirlineSearchResults />
         </div>
       }

@@ -1,4 +1,33 @@
 .airlineSearchForm {
-  border: 1px dashed red;
-  padding: 20px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(170, 170, 170, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.airlineSearchForm label {
+  font-size: 12px;
+  color: gray;
+}
+
+.airlineSearchForm input {
+  all: unset;
+  display: block;
+  padding: 10px 5px;
+  border-bottom: 1px solid gray;
+}
+
+.airlineSearchForm button {
+  all: unset;
+  display: block;
+  height: fit-content;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
 }

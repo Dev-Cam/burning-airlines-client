@@ -1,0 +1,33 @@
+.flightSeats {
+  height: calc(100vh - 54px - 46px - 5px);
+  background: rgb(231, 231, 231);
+  overflow-y: scroll;
+}
+
+.flightSeats-innerbox {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 150px 50px;
+  background: white;
+  border-radius: 100%;
+
+  border: 1px solid black;
+}
+
+.flightSeats__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  /* border: 1px dashed red; */
+}
+.flightSeats__row:last-child {
+  margin-bottom: 0;
+}
+
+.flightSeats__item {
+  width: 30px;
+  height: 30px;
+  background: gray;
+  border-radius: 5px;
+}

@@ -1,0 +1,39 @@
+.flightInfo {
+  /* border: 1px dashed red; */
+  padding-top: 50px;
+}
+
+.flightInfo-textbox h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.flightInfo-textbox > div {
+  margin-bottom: 15px;
+}
+
+.flightInfo-textbox p:first-child {
+  font-size: 14px;
+  color: gray;
+  line-height: 1.6;
+}
+
+.flightInfo-textbox p:last-child {
+  font-size: 16px;
+  color: black;
+}
+
+.flightInfo__selectedSeat {
+  margin-top: 70px;
+}
+
+.flightInfo__selectedSeat p:first-child {
+  color: gray;
+}
+.flightInfo__selectedSeat p:last-child {
+  font-size: 36px;
+  color: black;
+  font-weight: 600;
+  line-height: 1.4;
+}
