@@ -6,6 +6,7 @@ import AirlineSearchResults from '../components/AirlineSearchResults';
 class AirlineSearch extends React.Component {
   state = {
     data: [],
+    planeData: [],
     loading: true,
     error: false
   }
@@ -21,6 +22,7 @@ class AirlineSearch extends React.Component {
       // in search page, show every flight for default
       this.fetchAllFlights();
     }
+    this.fetchAllAirplanes();
   }
 
   componentDidUpdate(prevProps) {
@@ -74,6 +76,25 @@ class AirlineSearch extends React.Component {
     }
   }
 
+  fetchAllAirplanes = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/airplanes`);
+
+      console.log('fetchAllAirplanes()', res);
+
+      this.setState({
+        planeData: res.data,
+        error: false,
+        loading: false
+      });
+    } catch(err) {
+      this.setState({
+        loading: false,
+        error: true
+      })
+    }
+  }
+
   render () {
     if(this.state.error) {
       return <p>ERROR!</p>
@@ -88,7 +109,7 @@ class AirlineSearch extends React.Component {
         :
         <div>
           <AirlineSearchForm onSubmit={this.searchAirline} params={this.props.match.params} />
-          <AirlineSearchResults data={this.state.data}/>
+          <AirlineSearchResults data={this.state.data} planeData={this.state.planeData}/>
         </div>
       }
       </>
