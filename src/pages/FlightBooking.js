@@ -141,6 +141,7 @@ class FlightBooking extends React.Component {
           data={this.state.info} 
           selectedSeat={this.state.selectedSeat}
           planeData={this.state.planeData}
+          reservations={this.state.reservations}
           onSubmit={this.bookTheSeat}
         />
         <FlightSeats 
