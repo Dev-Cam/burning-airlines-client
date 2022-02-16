@@ -38,10 +38,10 @@
 }
 
 .flightSeats__item#taken {
-  background: red;
+  background: rgb(182, 0, 0);
   pointer-events: none;
 }
 
 .flightSeats__item#selected {
-  background: green;
+  background: rgb(1, 114, 1);
 }
