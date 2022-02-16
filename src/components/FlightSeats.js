@@ -8,8 +8,6 @@ class FlightSeats extends React.Component {
     ev.target.style.background = "green";
 
     this.props.onClick(seatID);
-
-    console.log(this.props)
   }
 
   render () {
