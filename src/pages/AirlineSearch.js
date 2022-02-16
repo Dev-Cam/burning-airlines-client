@@ -51,6 +51,7 @@ class AirlineSearch extends React.Component {
         error: false,
         loading: false
       });
+
     } catch(err) {
       this.setState({
         loading: false,
@@ -94,10 +95,6 @@ class AirlineSearch extends React.Component {
   }
 
   render () {
-    if(this.state.error) {
-      return <p>ERROR!</p>
-    }
-
     return (
       <>
       {
@@ -107,7 +104,17 @@ class AirlineSearch extends React.Component {
         :
         <div>
           <AirlineSearchForm onSubmit={this.searchAirline} params={this.props.match.params} />
-          <AirlineSearchResults data={this.state.data} planeData={this.state.planeData}/>
+          {
+            this.state.loading
+            ? 
+            <p>Loading...</p>
+            :
+            this.state.error
+            ?
+            <p>Error!</p>
+            :
+            <AirlineSearchResults data={this.state.data} planeData={this.state.planeData}/>
+          }
         </div>
       }
       </>
