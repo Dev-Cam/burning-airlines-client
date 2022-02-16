@@ -35,6 +35,11 @@ class FlightBooking extends React.Component {
     const seat = this.state.selectedSeat;
     const user = this.props.currentUser.id;
 
+    // check if a user actually choose a seat
+    if(seat === "") {
+      return;
+    }
+
     try {
       const res = await axios.post(`http://localhost:3000/api/reservation/${flightId}/${seat}/${user}`);
 
@@ -42,6 +47,10 @@ class FlightBooking extends React.Component {
         error: false,
         loading: false
       });
+
+      // redirect to previous page
+      this.props.history.goBack();
+
     } catch(err) {
       this.setState({
         loading: false,

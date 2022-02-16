@@ -5,7 +5,7 @@ import Seat from './Seat';
 
 class FlightSeats extends React.Component {
   state = {
-    selected: "B1"
+    selected: ""
   }
 
   handleClick = (seatID) => {
@@ -24,6 +24,8 @@ class FlightSeats extends React.Component {
 
     return (
       <div className="flightSeats">
+        {this.props.reservations.length === 0 ? <p>Loading....</p>: 
+
         <div className="flightSeats-innerbox">
         {
           [...Array(row)].map((e, row) => {
@@ -45,6 +47,9 @@ class FlightSeats extends React.Component {
           })
         }
         </div>
+
+
+      }
       </div>
     )
   }
