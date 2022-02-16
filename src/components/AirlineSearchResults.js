@@ -21,10 +21,10 @@ class AirlineSearchResults extends React.Component {
             <li key={item.id}>
               <span>{item.date}</span>
               <span>
-                <Link to={`/flight/${item.id}`}>Flight {item.id}</Link>
+                <Link to={`/flight/${item.id}`}>Flight {item.flight_number}</Link>
               </span>
               <span>{item.origin} - {item.destination}</span>
-              <span>{item.flight_number}</span>
+              <span>need to get airplane name here</span>
             </li>
           ))}
         </ul>

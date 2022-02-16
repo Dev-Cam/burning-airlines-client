@@ -15,7 +15,7 @@ class Header extends React.Component {
           <Link to="/">Home</Link>
           <Link to="/search">Search</Link>
           {/* this will redirect to backend */}
-          <a href="http://localhost:3000/">Logout</a>
+          <a href="http://localhost:3000/login">Logout</a>
         </nav>
       </header>
     )

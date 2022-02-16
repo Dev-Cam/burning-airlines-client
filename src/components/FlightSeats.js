@@ -8,10 +8,13 @@ class FlightSeats extends React.Component {
     ev.target.style.background = "green";
 
     this.props.onClick(seatID);
+
+    console.log(this.props)
   }
 
   render () {
     const { row, column } = this.props.seats;
+    const columnName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
     return (
       <div className="flightSeats">
@@ -25,10 +28,12 @@ class FlightSeats extends React.Component {
                   return <div 
                     key={index}
                     className="flightSeats__item" 
-                    data-id={`${row}-${index}`}
+                    data-id={`${columnName[index]}${row}`}
                     onClick={this.handleClick}
                   >
-
+                    {
+                      `${columnName[index]}${row}`
+                    }
                   </div>
                 })
               }

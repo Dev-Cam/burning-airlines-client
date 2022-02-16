@@ -12,10 +12,10 @@ class FlightInfo extends React.Component {
     return (
       <section className="flightInfo">
         <div className="flightInfo-textbox">
-          <h1>Flight {data.id}</h1>
+          <h1>Flight {data.flight_number}</h1>
           <div>
             <p>Airplane type</p>
-            <p>{data.flight_number}</p>
+            <p>need to get airplane name here</p>
           </div>
           <div>
             <p>Date</p>
@@ -38,7 +38,7 @@ class FlightInfo extends React.Component {
           className="flightInfo__bookingBtn"
           onClick={this.clickBookingBtn}
         >
-          Select
+          Reserve
         </button>
       </section>
     )

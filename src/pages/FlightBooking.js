@@ -32,6 +32,8 @@ class FlightBooking extends React.Component {
 
   bookTheSeat = () => {
     console.log(`a user wants to book a seat - ${this.state.selectedSeat}`);
+    const user = this.props.currentUser
+    console.log(`current user: ${user}`);
 
     // fetch post
   }
@@ -94,8 +96,15 @@ class FlightBooking extends React.Component {
   render () {
     return (
       <div className="flightBooking">
-        <FlightInfo data={this.state.info} selectedSeat={this.state.selectedSeat}/>
-        <FlightSeats seats={this.state.seats} onClick={this.selectSeat} />
+        <FlightInfo 
+          data={this.state.info} 
+          selectedSeat={this.state.selectedSeat}
+        />
+        <FlightSeats 
+          seats={this.state.seats} 
+          selectedSeat={this.state.selectedSeat} 
+          onClick={this.selectSeat} 
+        />
       </div>
     )
   }
