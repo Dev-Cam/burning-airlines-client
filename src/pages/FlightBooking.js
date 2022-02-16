@@ -130,6 +130,10 @@ class FlightBooking extends React.Component {
   }
 
   render () {
+    if(this.state.error) {
+      return <p>Error!</p>
+    };
+
     return (
       <div className="flightBooking">
         <FlightInfo 
