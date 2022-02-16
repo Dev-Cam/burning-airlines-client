@@ -1,42 +1,22 @@
 import React from 'react';
 import '../style/flightSeats.css';
 
+import Seat from './Seat';
+
 class FlightSeats extends React.Component {
-  componentDidMount() {
-    this.markBooked();
+  state = {
+    selected: "B1"
   }
 
-  componentDidUpdate() {
-    this.markBooked();
-  }
-
-
-  handleClick = (ev) => {
-    const seatID = ev.target.getAttribute("data-id");
-    ev.target.style.background = "green";
+  handleClick = (seatID) => {
+    this.setState({
+      selected: seatID
+    })
 
     this.props.onClick(seatID);
   }
 
-  markBooked = () => {
-    const reservationArr = this.props.reservations;
 
-    // console.log(reservationArr)
-
-
-    if(reservationArr.length) {
-
-      reservationArr.forEach(item => {
-        const div = document.querySelector(`#${item.seat}`);
-        // div.classList.add("taken");
-
-
-        // console.log(div)
-
-      })
-
-    }
-  }
 
   render () {
     const { row, column } = this.props.seats;
@@ -51,18 +31,13 @@ class FlightSeats extends React.Component {
 
               {
                 [...Array(column)].map((e, index) => {
-                  
-                  return <div 
+                  return <Seat 
                     key={index}
-                    id={`${columnName[index]}${row}`}
-                    className="flightSeats__item" 
-                    data-id={`${columnName[index]}${row}`}
+                    seatID={`${columnName[index]}${row}`}
+                    reservations={this.props.reservations}
                     onClick={this.handleClick}
-                  >
-                    {
-                      `${columnName[index]}${row}`
-                    }
-                  </div>
+                    selected={this.state.selected === `${columnName[index]}${row}`? true : false}
+                  />
                 })
               }
 
