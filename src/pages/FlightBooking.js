@@ -43,6 +43,8 @@ class FlightBooking extends React.Component {
     try {
       const res = await axios.post(`http://localhost:3000/api/reservation/${flightId}/${seat}/${user}`);
 
+      console.log('posting reservation: ',res)
+
       this.setState({
         error: false,
         loading: false
