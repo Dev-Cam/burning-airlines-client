@@ -8,7 +8,7 @@ class FlightBooking extends React.Component {
   state = {
     info: {},
     seats: {},
-    reservations: {},
+    reservations: [],
     selectedSeat: "",
     planeData: [],
     loading: true,
@@ -25,8 +25,6 @@ class FlightBooking extends React.Component {
   }
 
   selectSeat = (id) => {
-    console.log(`a user choose seat id: ${id}`);
-
     this.setState({
       selectedSeat: id
     });
@@ -108,9 +106,6 @@ class FlightBooking extends React.Component {
   fetchAllAirplanes = async () => {
     try {
       const res = await axios.get(`http://localhost:3000/api/airplanes`);
-
-      console.log(res);
-
 
       this.setState({
         planeData: res.data,
