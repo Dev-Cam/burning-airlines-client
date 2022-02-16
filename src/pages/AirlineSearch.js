@@ -80,8 +80,6 @@ class AirlineSearch extends React.Component {
     try {
       const res = await axios.get(`http://localhost:3000/api/airplanes`);
 
-      console.log('fetchAllAirplanes()', res);
-
       this.setState({
         planeData: res.data,
         error: false,

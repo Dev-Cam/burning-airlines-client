@@ -7,15 +7,16 @@ class FlightInfo extends React.Component {
   }
 
   render () {
-    const { data, selectedSeat } = this.props;
-
+    const { data, selectedSeat, planeData } = this.props;
     return (
       <section className="flightInfo">
         <div className="flightInfo-textbox">
           <h1>Flight {data.flight_number}</h1>
           <div>
             <p>Airplane type</p>
-            <p>need to get airplane name here</p>
+            <p>
+              {planeData.map((item) => item.id === data.id ? item.name : "")}
+            </p>
           </div>
           <div>
             <p>Date</p>

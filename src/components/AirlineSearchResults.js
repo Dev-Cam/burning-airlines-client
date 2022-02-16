@@ -5,9 +5,7 @@ import '../style/airlineSearchResults.css';
 class AirlineSearchResults extends React.Component {
   render () {
     const { data, planeData } = this.props;
-    console.log(planeData)
 
-    console.log(data)
     return (
       <div className="airlineSearchResults">
         <h2>Flight Search Results: Sydney to Melbourne</h2>
@@ -25,7 +23,9 @@ class AirlineSearchResults extends React.Component {
                 <Link to={`/flight/${item.id}`}>Flight {item.flight_number}</Link>
               </span>
               <span>{item.origin} - {item.destination}</span>
-              <span>{planeData.filter((id) => id === item.id)}</span>
+              <span>
+                {planeData.map((plane) => plane.id === item.id ? plane.name : "")}
+              </span>
             </li>
           ))}
         </ul>
