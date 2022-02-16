@@ -10,6 +10,7 @@ class FlightBooking extends React.Component {
     seats: {},
     reservations: {},
     selectedSeat: "",
+    planeData: [],
     loading: true,
     error: false
   }
@@ -20,6 +21,7 @@ class FlightBooking extends React.Component {
     this.fetchFlightInfo(flightID);
     this.fetchFlightSeats(flightID);
     this.fetchFlightReservation(flightID);
+    this.fetchAllAirplanes();
   }
 
   selectSeat = (id) => {
@@ -103,12 +105,33 @@ class FlightBooking extends React.Component {
     }
   }
 
+  fetchAllAirplanes = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/airplanes`);
+
+      console.log(res);
+
+
+      this.setState({
+        planeData: res.data,
+        error: false,
+        loading: false
+      });
+    } catch(err) {
+      this.setState({
+        loading: false,
+        error: true
+      })
+    }
+  }
+
   render () {
     return (
       <div className="flightBooking">
         <FlightInfo 
           data={this.state.info} 
           selectedSeat={this.state.selectedSeat}
+          planeData={this.state.planeData}
           onSubmit={this.bookTheSeat}
         />
         <FlightSeats 

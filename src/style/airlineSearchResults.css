@@ -11,7 +11,7 @@
 
 .airlineSearchResults li {
   display: grid;
-  grid-template-columns: 2fr 1fr 4fr 1fr;
+  grid-template-columns: 2fr 2fr 4fr 2fr;
   gap: 10px;
   padding: 24px 0;
   border-bottom: 1px solid rgb(190, 190, 190);
@@ -29,4 +29,8 @@
 .airlineSearchResults li a {
   text-decoration: underline;
   color: rgb(33, 82, 218);
+}
+
+.airlineSearchResults li > span:last-child {
+  font-size: 14px;
 }
