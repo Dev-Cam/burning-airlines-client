@@ -17,7 +17,6 @@ class FlightSeats extends React.Component {
   }
 
 
-
   render () {
     const { row, column } = this.props.seats;
     const columnName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];

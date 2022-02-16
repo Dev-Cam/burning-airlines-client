@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import FlightInfo from '../components/FlightInfo';
 import FlightSeats from '../components/FlightSeats';
+import Error from '../components/Error';
 import '../style/flightBooking.css'
 
 class FlightBooking extends React.Component {
@@ -131,7 +132,7 @@ class FlightBooking extends React.Component {
 
   render () {
     if(this.state.error) {
-      return <p>Error!</p>
+      return <Error />
     };
 
     return (

@@ -1,0 +1,9 @@
+.error {
+  padding: 100px;
+}
+
+.error p {
+  color: rgb(182, 182, 182);
+  font-size: 36px;
+  text-align: center;
+}
