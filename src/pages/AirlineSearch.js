@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import AirlineSearchForm from '../components/AirlineSearchForm';
 import AirlineSearchResults from '../components/AirlineSearchResults';
+import Error from '../components/Error';
 
 class AirlineSearch extends React.Component {
   state = {
@@ -97,11 +98,6 @@ class AirlineSearch extends React.Component {
   render () {
     return (
       <>
-      {
-        this.state.loading 
-        ?
-        <p>Loading...</p>
-        :
         <div>
           <AirlineSearchForm onSubmit={this.searchAirline} params={this.props.match.params} />
           {
@@ -111,12 +107,11 @@ class AirlineSearch extends React.Component {
             :
             this.state.error
             ?
-            <p>Error!</p>
+            <Error />
             :
             <AirlineSearchResults data={this.state.data} planeData={this.state.planeData}/>
           }
         </div>
-      }
       </>
     )
   }
