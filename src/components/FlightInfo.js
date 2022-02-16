@@ -3,7 +3,7 @@ import '../style/flightInfo.css';
 
 class FlightInfo extends React.Component {
   clickBookingBtn = () => {
-    this.props.bookTheFlight();
+    this.props.onSubmit();
   }
 
   render () {

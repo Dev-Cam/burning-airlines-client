@@ -8,7 +8,10 @@ import './style/global.css';
 
 class App extends React.Component {
   state = {
-    currentUser: {}
+    currentUser: {
+      id: 10,
+      name: "Jia"
+    }
   }
 
   componentDidMount() {
