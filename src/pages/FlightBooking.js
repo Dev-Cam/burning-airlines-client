@@ -44,6 +44,8 @@ class FlightBooking extends React.Component {
     try {
       const res = await axios.post(`http://localhost:3000/api/reservation/${flightId}/${seat}/${user}`);
 
+      console.log('posting reservation: ',res)
+
       this.setState({
         error: false,
         loading: false
@@ -141,6 +143,7 @@ class FlightBooking extends React.Component {
           data={this.state.info} 
           selectedSeat={this.state.selectedSeat}
           planeData={this.state.planeData}
+          reservations={this.state.reservations}
           onSubmit={this.bookTheSeat}
         />
         <FlightSeats 

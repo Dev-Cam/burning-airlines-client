@@ -9,7 +9,7 @@ import './style/global.css';
 class App extends React.Component {
   state = {
     currentUser: {
-      id: 10,
+      id: 3,
       name: "Jia"
     }
   }

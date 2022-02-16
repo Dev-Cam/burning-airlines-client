@@ -7,8 +7,12 @@ class FlightInfo extends React.Component {
   }
 
   render () {
-    const { data, selectedSeat, planeData } = this.props;
+    const { data, selectedSeat, planeData, reservations } = this.props;
+
+    const plane = planeData?.filter((item) => item.id === data.id)[0];
     return (
+      <>
+      {plane === undefined ? "" :
       <section className="flightInfo">
         <div className="flightInfo-textbox">
           <h1>Flight {data.flight_number}</h1>
@@ -28,7 +32,7 @@ class FlightInfo extends React.Component {
           </div>
           <div>
             <p>Available Seats</p>
-            <p>34 / 80</p>
+            <p>{`${reservations.length} / ${plane.row * plane.column}`}</p>
           </div>
         </div>
         <div className="flightInfo__selectedSeat">
@@ -42,6 +46,8 @@ class FlightInfo extends React.Component {
           Reserve
         </button>
       </section>
+      }
+      </>
     )
   }
 }
