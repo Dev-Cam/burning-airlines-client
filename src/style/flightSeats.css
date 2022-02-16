@@ -1,5 +1,5 @@
 .flightSeats {
-  min-height: calc(100vh - 54px - 46px - 5px);
+  height: calc(100vh - 54px - 46px - 5px);
   background: rgb(231, 231, 231);
   overflow-y: scroll;
 }

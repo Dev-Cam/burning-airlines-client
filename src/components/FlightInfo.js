@@ -7,21 +7,23 @@ class FlightInfo extends React.Component {
   }
 
   render () {
+    const { data, selectedSeat } = this.props;
+
     return (
       <section className="flightInfo">
         <div className="flightInfo-textbox">
-          <h1>Flight 09</h1>
+          <h1>Flight {data.id}</h1>
           <div>
             <p>Airplane type</p>
-            <p>707</p>
+            <p>{data.flight_number}</p>
           </div>
           <div>
             <p>Date</p>
-            <p>11/02/202</p>
+            <p>{data.date}</p>
           </div>
           <div>
             <p>Trip</p>
-            <p>Sydney to Melbourne</p>
+            <p>{data.origin} to {data.destination}</p>
           </div>
           <div>
             <p>Available Seats</p>
@@ -30,7 +32,7 @@ class FlightInfo extends React.Component {
         </div>
         <div className="flightInfo__selectedSeat">
           <p>Selected Seat</p>
-          <p>{this.props.selectedSeat || "Select your seat"}</p>
+          <p>{selectedSeat || "Select your seat"}</p>
         </div>
         <button 
           className="flightInfo__bookingBtn"

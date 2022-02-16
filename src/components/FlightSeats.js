@@ -11,9 +11,7 @@ class FlightSeats extends React.Component {
   }
 
   render () {
-    // temporary variable
-    const row = 8;
-    const column = 4;
+    const { row, column } = this.props.seats;
 
     return (
       <div className="flightSeats">

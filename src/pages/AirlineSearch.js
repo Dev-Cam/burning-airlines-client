@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import AirlineSearchForm from '../components/AirlineSearchForm';
 import AirlineSearchResults from '../components/AirlineSearchResults';
 
@@ -14,11 +15,11 @@ class AirlineSearch extends React.Component {
     const currentDestination = this.props.match.params.destination;
 
     if(currentOrigin && currentDestination) {
+      // if there was search term, show the search result
       this.fetchSearchResults(currentOrigin, currentDestination);
     } else {
-      this.setState({
-        loading: false
-      })
+      // in search page, show every flight for default
+      this.fetchAllFlights();
     }
   }
 
@@ -29,6 +30,7 @@ class AirlineSearch extends React.Component {
     const currentOrigin = this.props.match.params.origin;
     const currentDestination = this.props.match.params.destination;
 
+    // when prev and current params are not matched, fetch current search result
     if(prevOrigin !== currentOrigin || prevDestination !== currentDestination) {
       this.fetchSearchResults(currentOrigin, currentDestination);
     }
@@ -39,14 +41,37 @@ class AirlineSearch extends React.Component {
   }
 
   fetchSearchResults = async (origin, destination) => {
-    // fetch
-    console.log(`need to make a function. From ${origin} to ${destination}`);
+    try {
+      const res = await axios.get(`http://localhost:3000/api/flights/search/${origin}/${destination}`);
 
-    this.setState({
-      // data: 
-      loading: false,
-      error: false,
-    })
+      this.setState({
+        data: res.data,
+        error: false,
+        loading: false
+      });
+    } catch(err) {
+      this.setState({
+        loading: false,
+        error: true
+      })
+    }
+  }
+
+  fetchAllFlights = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/flights`);
+
+      this.setState({
+        data: res.data,
+        error: false,
+        loading: false
+      });
+    } catch(err) {
+      this.setState({
+        loading: false,
+        error: true
+      })
+    }
   }
 
   render () {
@@ -63,7 +88,7 @@ class AirlineSearch extends React.Component {
         :
         <div>
           <AirlineSearchForm onSubmit={this.searchAirline} params={this.props.match.params} />
-          <AirlineSearchResults />
+          <AirlineSearchResults data={this.state.data}/>
         </div>
       }
       </>

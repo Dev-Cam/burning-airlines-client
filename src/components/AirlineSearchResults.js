@@ -4,6 +4,9 @@ import '../style/airlineSearchResults.css';
 
 class AirlineSearchResults extends React.Component {
   render () {
+    const { data } = this.props;
+
+    console.log(data)
     return (
       <div className="airlineSearchResults">
         <h2>Flight Search Results: Sydney to Melbourne</h2>
@@ -14,24 +17,16 @@ class AirlineSearchResults extends React.Component {
             <span>From - To</span>
             <span>Plane</span>
           </li>
-
-          {/* will iterate with .map here */}
-          <li>
-            <span>3/1/13</span>
-            <span>
-              <Link to={`/flight/:id`}>23</Link>
-            </span>
-            <span>Sydney - Seoul</span>
-            <span>757</span>
-          </li>
-          <li>
-            <span>3/1/13</span>
-            <span>
-              <Link to={`/flight/:id`}>23</Link>
-            </span>
-            <span>Sydney - Seoul</span>
-            <span>757</span>
-          </li>
+          {data.map((item) => (
+            <li key={item.id}>
+              <span>{item.date}</span>
+              <span>
+                <Link to={`/flight/${item.id}`}>Flight {item.id}</Link>
+              </span>
+              <span>{item.origin} - {item.destination}</span>
+              <span>{item.flight_number}</span>
+            </li>
+          ))}
         </ul>
       </div>
     )
