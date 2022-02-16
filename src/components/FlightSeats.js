@@ -6,7 +6,7 @@ class FlightSeats extends React.Component {
   handleClick = (ev) => {
     const seatID = ev.target.getAttribute("data-id");
     ev.target.style.background = "green";
-
+    
     this.props.onClick(seatID);
   }
 
