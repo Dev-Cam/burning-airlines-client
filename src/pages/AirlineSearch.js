@@ -23,7 +23,7 @@ class AirlineSearch extends React.Component {
       // in search page, show every flight for default
       this.fetchAllFlights();
     }
-    this.fetchAllAirplanes();
+    // this.fetchAllAirplanes();
   }
 
   componentDidUpdate(prevProps) {

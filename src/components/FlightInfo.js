@@ -32,7 +32,7 @@ class FlightInfo extends React.Component {
           </div>
           <div>
             <p>Available Seats</p>
-            <p>{`${reservations.length} / ${plane.row * plane.column}`}</p>
+            <p>{`${plane.row * plane.column - reservations.length} / ${plane.row * plane.column}`}</p>
           </div>
         </div>
         <div className="flightInfo__selectedSeat">
