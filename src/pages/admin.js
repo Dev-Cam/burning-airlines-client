@@ -14,7 +14,7 @@ class Admin extends React.Component{
     return(
       <div class="container">
         <div class ="inner-container">
-          <AirplaneList />,
+          <AirplaneList />
           <FlightList />
         </div>
       </div>
