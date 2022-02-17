@@ -32,21 +32,19 @@ class FlightList extends React.Component{
       <>
       {
         this.state.flightData.length === 0 ? <p>No Data</p> :
-        <div class="data">
-        <h2>Current Flight</h2>
+        <div class="data" id="flight">
+        <h2>Current Flights</h2>
         <ul>
           <li>  
             <p><strong>Flight number</strong></p>
             <p><strong>Flight date</strong></p>
             <p><strong>Start-Finish</strong></p>
-            <p><strong>Airplane</strong></p>
             <p><strong>Number of seats booked</strong></p>
           </li>
           
             {
               this.state.flightData.map((item) => (
                 <li key={item.id}>
-                  <p>{item.name}</p>
                   <p>{item.flight_number}</p>
                   <p>{item.date}</p>
                   <p>{item.origin} - {item.destination}</p>
