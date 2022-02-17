@@ -14,6 +14,7 @@ class Header extends React.Component {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/search">Search</Link>
+          <Link to="/admin">Admin</Link>
           <a href="http://localhost:3000/login">Logout</a>
         </nav>
       </header>
