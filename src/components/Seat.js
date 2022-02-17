@@ -32,6 +32,8 @@ class Seat extends React.Component {
   render() {
     const {seatID} = this.props;
 
+    console.log(this.props.reservations)
+
     return (
       <div 
         className="flightSeats__item"

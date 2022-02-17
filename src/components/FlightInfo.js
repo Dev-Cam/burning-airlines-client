@@ -9,7 +9,7 @@ class FlightInfo extends React.Component {
   render () {
     const { data, selectedSeat, planeData, reservations } = this.props;
 
-    const plane = planeData?.filter((item) => item.id === data.id)[0];
+    const plane = planeData?.filter((item) => item.id === data.airplane_id)[0];
     return (
       <>
       {plane === undefined ? "" :
@@ -19,7 +19,7 @@ class FlightInfo extends React.Component {
           <div>
             <p>Airplane type</p>
             <p>
-              {planeData.map((item) => item.id === data.id ? item.name : "")}
+              {planeData.map((item) => item.id === data.airplane_id ? item.name : "")}
             </p>
           </div>
           <div>

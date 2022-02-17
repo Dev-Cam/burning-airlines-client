@@ -24,7 +24,7 @@ class AirlineSearchResults extends React.Component {
               </span>
               <span>{item.origin} - {item.destination}</span>
               <span>
-                {planeData.map((plane) => plane.id === item.id ? plane.name : "")}
+                {planeData.map((plane) => plane.id === item.airplane_id ? plane.name : "")}
               </span>
             </li>
           ))}
