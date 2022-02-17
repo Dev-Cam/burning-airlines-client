@@ -23,7 +23,6 @@ class FlightSeats extends React.Component {
 
     return (
       <div className="flightSeats">
-        {this.props.reservations.length === 0 ? <p>Loading....</p>: 
 
         <div className="flightSeats-innerbox">
         {
@@ -48,7 +47,7 @@ class FlightSeats extends React.Component {
         </div>
 
 
-      }
+      
       </div>
     )
   }
